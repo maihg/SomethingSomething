@@ -15,12 +15,14 @@ def try_to_multiply():
     print("Fasit: ", product)
     return (user_input == product)
 
-# while-løkke for å se hvor lenge man klarer å svare riktig
-# må klare 5, 10 eller 30 riktig
+
+# SPILL. 
+# må klare 5, 10 eller 30 riktig avhengig av vanskelighetsgrad
+# initierer correct og count (klare for bruk dersom valget under er ok)
 correct = True
 count = 0
-#rounds = 1
 
+# bruker må velge vanskelighetsgrad før spillet kan begynne
 user_input2 = input("Lett, middels eller vanskelig? ")
 if user_input2 == "lett":
     rounds = 5
@@ -31,7 +33,9 @@ elif user_input2 == "vanskelig":
 else:
     print("Ukjent valg. Programmet stoppes.")
     correct = False;
-
+    
+# ok valg -> spillet begynner her
+# while-løkke for å se hvor lenge man klarer å svare riktig
 while correct:
     tic = time.perf_counter()
     correct = try_to_multiply()
